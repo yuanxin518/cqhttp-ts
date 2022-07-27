@@ -22,3 +22,5 @@ export type PostNoticeType =
 	| 'client_status'
 	| 'essence'
 	| 'notify';
+
+export type PostRequestType = 'friend' | 'group';

@@ -2,6 +2,7 @@ import type {
 	GeneralEventTypes,
 	PostMessageType,
 	PostNoticeType,
+	PostRequestType,
 } from './GeneralEventTypes';
 import { MessageSenderType } from './PostMessageType/MessageSenderType';
 
@@ -41,4 +42,9 @@ export type GeneralMessagePost = GeneralPost & {
 export type GeneralNoticePost = GeneralPost & {
 	post_type: 'notice';
 	notice_type: PostNoticeType;
+};
+
+export type GeneralRequestPost = GeneralPost & {
+	post_type: 'request';
+	request_type: PostRequestType;
 };
