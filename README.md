@@ -1,5 +1,5 @@
 # cqhttp-ts
-ts搭建的go-cqhttp机器人开发框架
+go-cqhttp的ts开发框架
 
 ## 响应流程
 1. 接受通用上报

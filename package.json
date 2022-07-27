@@ -1,19 +1,21 @@
 {
 	"name": "cqhttp-ts",
-	"version": "1.0.0",
-	"description": "",
+	"version": "1.0.4",
+	"description": "go-cqhttp的ts开发框架",
 	"main": "src/index.ts",
 	"module": "esnext",
 	"scripts": {
 		"build": "tsup",
 		"dev": "nodemon",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"bumpp": "bump --commit --tag --push",
+		"release": "npm run bumpp"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"@types/node": "^18.6.1",
 		"@types/ws": "^8.5.3",
+		"bumpp": "^8.2.1",
 		"nodemon": "^2.0.19",
 		"tsup": "^6.2.0",
 		"typescript": "^4.7.4",
