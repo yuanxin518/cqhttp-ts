@@ -7,4 +7,4 @@ import linkServer from './server/linkServer';
 linkServer(8080);
 
 useMessageMod([test([])]);
-useNoticeMod([testNotice([159426420])]);
+useNoticeMod([testNotice([])]);
