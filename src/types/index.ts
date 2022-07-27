@@ -10,7 +10,7 @@ export { GroupHonorUpdateType } from './PostNoticeType/GroupHonorUpdateType';
 export { GroupLuckyKingType } from './PostNoticeType/GroupLuckyKingType';
 export { GroupMemberDecreaseType } from './PostNoticeType/GroupMemberDecreaseType';
 export { GroupMemberIncreaseType } from './PostNoticeType/GroupMemberIncreaseType';
-export { GroupRecallType } from './PostNoticeType/GroupMessageRecallType';
+export { GroupMessageRecallType } from './PostNoticeType/GroupMessageRecallType';
 export { GroupPokeType } from './PostNoticeType/GroupPokeType';
 export { GroupUploadFileType } from './PostNoticeType/GroupUploadFileType';
 export { ReceiveOfflineFileType } from './PostNoticeType/ReceiveOfflineFileType';
