@@ -16,11 +16,39 @@ go-cqhttp的ts开发框架
 3. FriendMessageModType要求强制传入一个**number数组**来实现白名单（具体是否实现了白名单，根据modType中的字段来查看）。还需要实现**handler**来作为处理的入口，实现**name**来进行统一管理，实现type来作为内部识别的标志
 4. 编写handler函数。通过调用框架导出的api来实现主动操作，或者调用msg上绑定的reply快速回复消息。
 
+## 快速开始
 ```
+npm i cqhttp-ts
+```
+```
+import linkServer, { ModTypes, PostTypes, useMod } from 'cqhttp-ts';
+
 linkServer(8080);
 
-useMod.useMessageMod([test([10086])]);
-//在websocket 8080端口运行了go-cqhttp的情况下，只需要这2步即可实现一个mod，这个mod只会对10086的qq或者群号来响应。
+useMod.useMessageMod([friendMessageModTest([2389451262]),xxx(),xxx().....]);
+//类似这样来加载更多的mod
+
+```
+```
+//ModTypes 提供了所有的mod类型。
+import {CqApi} from 'cqhttp-ts'
+
+const friendMessageModTest = (
+	whiteList: number[] | false
+): ModTypes.FriendMessageModType => {
+
+	//每个消息都会经过handler来处理。不同的ModType对应不同的PostType
+	const handler = (msg: PostTypes.FriendMessageType) => {
+		msg.reply('你好');
+		CqApi.xxx;//这是实现的主动调用的api。
+	};
+	return {
+		name: '测试',
+		type: 'friendMessageMod',
+		whiteList,
+		handler,
+	};
+};
 ```
 
 
