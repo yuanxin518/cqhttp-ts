@@ -31,3 +31,6 @@ useMod.useMessageMod([test([10086])]);
 
 ### Notice
 * GroupRecallModType 群回复拓展模块
+
+## 实现api
+* CqApi.sendPrivateMessage 发送私聊消息
