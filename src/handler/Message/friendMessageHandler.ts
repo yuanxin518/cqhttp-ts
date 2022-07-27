@@ -1,8 +1,8 @@
-import { CqWebsocket } from '../../server/linkServer';
+import { friendMessageModType } from '../../types/Mod/FriendMessageModType';
 import { FriendMessageType } from '../../types/PostMessageType/FriendMessageType';
-import createSendPoint from '../createSendPoint';
 
+export const friendMessageMods: friendMessageModType[] = [];
 function friendMessageHandler(msg: FriendMessageType) {
-	msg.reply('你好', true);
+	friendMessageMods.forEach((item) => item.handle());
 }
 export default friendMessageHandler;
