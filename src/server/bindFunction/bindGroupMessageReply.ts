@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import createSendPoint from '../../handler/createSendPoint';
+import createSendPoint from '../../api/createSendPoint';
 import { GroupMessageType } from '../../types/PostMessageType/GroupMessageType';
 
 export default (ws: WebSocket, msg: GroupMessageType) => {

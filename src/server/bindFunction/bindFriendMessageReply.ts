@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import createSendPoint from '../../handler/createSendPoint';
+import createSendPoint from '../../api/createSendPoint';
 import { FriendMessageType } from '../../types/PostMessageType/FriendMessageType';
 
 export default (ws: WebSocket, msg: FriendMessageType) => {

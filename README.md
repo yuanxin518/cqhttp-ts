@@ -19,7 +19,7 @@ ts搭建的go-cqhttp机器人开发框架
 ```
 linkServer(8080);
 
-useMessageMod([test([10086])]);
+useMod.useMessageMod([test([10086])]);
 //在websocket 8080端口运行了go-cqhttp的情况下，只需要这2步即可实现一个mod，这个mod只会对10086的qq或者群号来响应。
 ```
 
