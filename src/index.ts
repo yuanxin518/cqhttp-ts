@@ -1,10 +1,7 @@
-import { friendMessageMods } from './handler/Message/friendMessageHandler';
+import { useFriendMessageMod } from './handler/Message/friendMessageHandler';
+import test from './mods/friendMessageMod.ts/test';
 import linkServer from './server/linkServer';
 
-const server = linkServer(8080);
+linkServer(8080);
 
-friendMessageMods.push({
-	handle: () => {
-		console.log(2);
-	},
-});
+useFriendMessageMod([test([2389451262])]);
