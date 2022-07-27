@@ -1,6 +1,6 @@
 import {
 	GeneralPost,
-	MessagePost,
+	GeneralMessagePost,
 	GeneralNoticePost,
 } from '../types/GeneralPostType';
 import { WebSocket } from 'ws';
@@ -33,7 +33,7 @@ const initLinkServer = (port: number) => {
 		switch (data.post_type) {
 			// 消息上报
 			case 'message':
-				const message: MessagePost = data as any;
+				const message: GeneralMessagePost = data as any;
 				// 绑定自动回复函数
 				if (message.message_type === 'private') {
 					bindFriendMessageReply(CqWebsocket, message as FriendMessageType);

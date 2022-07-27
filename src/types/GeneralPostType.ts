@@ -23,7 +23,7 @@ export type GeneralPost = {
 	 */
 };
 
-export type MessagePost = GeneralPost & {
+export type GeneralMessagePost = GeneralPost & {
 	post_notice: 'message';
 	sub_type: string;
 	message_id: number;
