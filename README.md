@@ -27,8 +27,13 @@ useMod.useMessageMod([test([10086])]);
 ## 实现mod接口
 >  从ModTypes调用
 > 具体用处见 [cqhttp帮助中心](https://docs.go-cqhttp.org/api/#%E5%9F%BA%E7%A1%80%E4%BC%A0%E8%BE%93)
+> 
+**messageMod**
 * FriendMessageModType 朋友消息拓展模块
 * GroupMessageModType 群消息拓展模块
+
+
+**noticeMod**
 * ClientStatusUpdateModType
 * FriendAddModType
 * FriendRecallModType
@@ -36,7 +41,7 @@ useMod.useMessageMod([test([10086])]);
 * GroupAdminUpdateModType
 * GroupBanModType
 * GroupCardUpdateModType
-* ,GroupEssenceModType
+* GroupEssenceModType
 * GroupHonorUpdateModType
 * GroupLuckyKingModType
 * GroupMemberDecreaseModType
@@ -44,16 +49,11 @@ useMod.useMessageMod([test([10086])]);
 * GroupRecallModType
 * GroupPokeModType
 * GroupUploadFileModType
-* ReceiveOfflineType
+* ReceiveOfflineFileModType
 
-
+**requestMod**
+* friendAddRequestModType
+* groupAddRequestModType
 ## 实现api
 * CqApi.sendPrivateMessage 发送私聊消息
 
-## 已经实现处理器
-* groupBanHandler
-*	FriendAddHandler
-*	groupRecallHandler
-*	clientStatusUpdateHandler
-* groupMessageHandler
-* friendMessageHandler
