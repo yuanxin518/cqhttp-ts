@@ -15,4 +15,5 @@ export * from './types/Mod/MessageModType';
 /**
  * PostType
  */
-export * from './types';
+export * as PostTypes from './types';
+export * as ModTypes from './types/Mod';
