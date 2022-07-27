@@ -1,6 +1,5 @@
-import { friendMessageMods } from './Message/friendMessageHandler';
-import { groupMessageMods } from './Message/groupMessageHandler';
+import friendMessageHandler from './Message/friendMessageHandler';
 import { useMessageMod } from './Message/useMessageMod';
+import { useNoticeMod } from './Notice/useNoticeMod';
 
-export { friendMessageMods, groupMessageMods };
-export { useMessageMod };
+export { useMessageMod, useNoticeMod };

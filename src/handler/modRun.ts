@@ -1,3 +1,6 @@
+/**
+ * 用于将mod添加到mod列表中
+ */
 export default (mods: any[], post: any, id?: number) => {
 	mods.forEach((mod) => {
 		if (id === undefined) {
@@ -16,16 +19,4 @@ export default (mods: any[], post: any, id?: number) => {
 			mod.handler(post);
 		}
 	});
-	// groupRecallMods.forEach((n) => {
-	// 	/**
-	// 	 * 白名单为false，则不设置白名单
-	// 	 */
-	// 	if (typeof n.whiteList === 'boolean') {
-	// 		n.handler(notice);
-	// 		return;
-	// 	}
-	// 	if (n.whiteList.includes(notice.group_id)) {
-	// 		n.handler(notice);
-	// 	}
-	// });
 };

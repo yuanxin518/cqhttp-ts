@@ -1,6 +1,8 @@
 import { GeneralRequestPost } from '../GeneralPostType';
-
-export type FriendAddRequest = GeneralRequestPost & {
+/**
+ * 收到好友请求
+ */
+export type FriendAddRequestType = GeneralRequestPost & {
 	request_type: 'friend';
 	/**
 	 * 发送请求的qq

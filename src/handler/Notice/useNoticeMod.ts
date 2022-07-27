@@ -1,7 +1,13 @@
-import { GroupRecallModType } from '../../types/Mod/NoticeModType';
+import {
+	FriendAddModType,
+	GroupRecallModType,
+} from '../../types/Mod/NoticeModType';
+import { friendAddMods } from './friendAddHandler';
 import { groupRecallMods } from './groupRecallHandler';
 
-export const useNoticeMod = (mod: GroupRecallModType[]) => {
+export const useNoticeMod = (
+	mod: GroupRecallModType[] | FriendAddModType[]
+) => {
 	// 添加处理器
 	if (mod instanceof Array) {
 		mod.forEach((item) => {
@@ -9,6 +15,9 @@ export const useNoticeMod = (mod: GroupRecallModType[]) => {
 			switch (item.type) {
 				case 'groupRecallMod':
 					groupRecallMods.push(item);
+					break;
+				case 'friendAddMod':
+					friendAddMods.push(item);
 			}
 		});
 		return;

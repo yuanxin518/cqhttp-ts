@@ -1,19 +1,21 @@
 import { CqApi } from './api';
-import { useMessageMod } from './handler';
-import { useNoticeMod } from './handler/Notice/useNoticeMod';
+import { useMessageMod, useNoticeMod } from './handler';
 import linkServer from './server/linkServer';
 
+/**
+ * 连接websocket
+ */
 export default linkServer;
-export const useMod = { useMessageMod, useNoticeMod };
+// API调用入口
 export { CqApi };
 
-/**
- * Modtypes
- */
-export * from './types/Mod/NoticeModType';
-export * from './types/Mod/MessageModType';
 /**
  * PostType
  */
 export * as PostTypes from './types';
+// ModTypes
 export * as ModTypes from './types/Mod';
+// useMod
+export const useMod = { useMessageMod, useNoticeMod };
+// handler
+export * as handler from './handler/handler';

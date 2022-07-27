@@ -1,5 +1,5 @@
-import { ClientStatusUpdateModType } from '../../../dist';
 import { ClientStatusUpdateType } from '../../types';
+import { ClientStatusUpdateModType } from '../../types/Mod';
 import modRun from '../modRun';
 
 export const clientStatusUpdateMods: ClientStatusUpdateModType[] = [];
