@@ -1,5 +1,7 @@
 import { GeneralNoticePost } from '../GeneralPostType';
-
+/**
+ * 精华消息
+ */
 export type GroupEssenceType = GeneralNoticePost & {
 	notice_type: 'essence';
 	/**

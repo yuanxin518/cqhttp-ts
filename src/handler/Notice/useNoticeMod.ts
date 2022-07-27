@@ -1,4 +1,4 @@
-import { GroupRecallModType } from '../../types/Mod/RecallModType';
+import { GroupRecallModType } from '../../types/Mod/NoticeModType';
 import { groupRecallMods } from './groupRecallHandler';
 
 export const useNoticeMod = (mod: GroupRecallModType[]) => {

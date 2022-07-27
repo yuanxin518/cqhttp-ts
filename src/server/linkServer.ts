@@ -11,7 +11,7 @@ import { FriendMessageType } from '../types/PostMessageType/FriendMessageType';
 import bindGroupMessageReply from './bindFunction/bindGroupMessageReply';
 import { GroupMessageType } from '../types/PostMessageType/GroupMessageType';
 import groupRecallHandler from '../handler/Notice/groupRecallHandler';
-import { GroupRecallType } from '../types/PostNoticeType/GroupRecallType';
+import { GroupRecallType } from '../types/PostNoticeType/GroupMessageRecallType';
 
 export let CqWebsocket: WebSocket;
 const initLinkServer = (port: number) => {

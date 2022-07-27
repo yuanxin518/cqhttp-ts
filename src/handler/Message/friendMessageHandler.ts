@@ -11,6 +11,10 @@ export const friendMessageMods: FriendMessageModType[] = [];
  */
 export default (msg: FriendMessageType) => {
 	friendMessageMods.forEach((item) => {
+		if (typeof item.whiteList === 'boolean') {
+			item.handler(msg);
+			return;
+		}
 		if (item.whiteList.includes(msg.user_id)) {
 			item.handler(msg);
 		}
