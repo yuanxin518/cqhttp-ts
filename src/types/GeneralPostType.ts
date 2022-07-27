@@ -24,6 +24,7 @@ export type GeneralPost = {
 };
 
 export type MessagePost = GeneralPost & {
+	post_notice: 'message';
 	sub_type: string;
 	message_id: number;
 	user_id: number;
@@ -38,21 +39,6 @@ export type MessagePost = GeneralPost & {
 };
 
 export type GeneralNoticePost = GeneralPost & {
+	post_type: 'notice';
 	notice_type: PostNoticeType;
-	/**
-	 * 群号
-	 */
-	group_id: number;
-	/**
-	 * 消息发送者QQ
-	 */
-	user_id: number;
-	/**
-	 * 操作人QQ
-	 */
-	operator_id: number;
-	/**
-	 * 被撤回的消息的id
-	 */
-	message_id: number;
 };
