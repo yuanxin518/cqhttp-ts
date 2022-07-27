@@ -1,6 +1,6 @@
 import { GeneralRequestPost } from '../GeneralPostType';
 
-export type GroupAddRequest = GeneralRequestPost & {
+export type GroupAddRequestType = GeneralRequestPost & {
 	request_type: 'group';
 	/**
 	 * 加群请求、邀请登录号入群

@@ -20,7 +20,7 @@ import { friendAddMods } from './friendAddHandler';
 import { friendPokeMods } from './friendPokeHandler';
 import { groupAdminUpdateMods } from './groupAdminUpdateHandler';
 import { groupBanMods } from './groupBanHandler';
-import { groupCardUpdateMods } from './GroupCardUpdateHandler';
+import { groupCardUpdateMods } from './groupCardUpdateHandler';
 import { groupEssenceMods } from './groupEssenceHandler';
 import { groupHonorUpdateMods } from './groupHonorUpdateHandler';
 import { groupLuckyKingMods } from './groupLuckyKingHandler';

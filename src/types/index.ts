@@ -1,3 +1,4 @@
+//notice
 export { ClientStatusUpdateType } from './PostNoticeType/ClientStatusUpdateType';
 export { FriendAddType } from './PostNoticeType/FriendAddType';
 export { FriendMessageRecallType } from './PostNoticeType/FriendMessageRecallType';
@@ -17,3 +18,6 @@ export { ReceiveOfflineFileType } from './PostNoticeType/ReceiveOfflineFileType'
 // message
 export { FriendMessageType } from './PostMessageType/FriendMessageType';
 export { GroupMessageType } from './PostMessageType/GroupMessageType';
+//request
+export { FriendAddRequestType } from './PostRequestType/FriendAddRequestType';
+export { GroupAddRequestType } from './PostRequestType/GroupAddRequestType';

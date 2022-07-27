@@ -3,6 +3,7 @@ import {
 	GeneralMessagePost,
 	GeneralNoticePost,
 	NotifyTypePost,
+	GeneralRequestPost,
 } from '../types/GeneralPostType';
 import { WebSocket } from 'ws';
 import friendMessageHandler from '../handler/Message/friendMessageHandler';
@@ -15,7 +16,6 @@ import groupMessageRecallHandler from '../handler/Notice/groupMessageRecallHandl
 import clientStatusUpdateHandler from '../handler/Notice/clientStatusUpdateHandler';
 import friendAddHandler from '../handler/Notice/friendAddHandler';
 import groupAdminUpdateHandler from '../handler/Notice/groupAdminUpdateHandler';
-import GroupCardUpdateHandler from '../handler/Notice/GroupCardUpdateHandler';
 import groupEssenceHandler from '../handler/Notice/groupEssenceHandler';
 import friendMessageRecallHandler from '../handler/Notice/friendMessageRecallHandler';
 import groupBanHandler from '../handler/Notice/groupBanHandler';
@@ -26,6 +26,9 @@ import groupHonorUpdateHandler from '../handler/Notice/groupHonorUpdateHandler';
 import groupLuckyKingHandler from '../handler/Notice/groupLuckyKingHandler';
 import groupPokeHandler from '../handler/Notice/groupPokeHandler';
 import receiveOfflineFileHandler from '../handler/Notice/receiveOfflineFileHandler';
+import friendAddRequestHandler from '../handler/Request/friendAddRequestHandler';
+import groupAddRequestHandler from '../handler/Request/groupAddRequestHandler';
+import GroupCardUpdateHandler from '../handler/Notice/groupCardUpdateHandler';
 
 export let CqWebsocket: WebSocket;
 const initLinkServer = (port: number) => {
@@ -116,6 +119,18 @@ const initLinkServer = (port: number) => {
 						break;
 				}
 				break;
+			case 'request':
+				const request: GeneralRequestPost = data as any;
+				switch (request.request_type) {
+					case 'friend':
+						friendAddRequestHandler(request as any);
+						break;
+					case 'group':
+						groupAddRequestHandler(request as any);
+						break;
+					default:
+						break;
+				}
 			default:
 				break;
 		}
