@@ -1,12 +1,13 @@
-import { FriendMessageModType } from '../../types/Mod/FriendMessageModType';
-import { FriendMessageType } from '../../types/PostMessageType/FriendMessageType';
+import { GroupMessageModType } from '../../types/Mod/MessageModType';
+import { GroupMessageType } from '../../types/PostMessageType/GroupMessageType';
 
-export default (whiteList: number[]): FriendMessageModType => {
-	const handle = (msg: FriendMessageType) => {
+export default (whiteList: number[]): GroupMessageModType => {
+	const handle = (msg: GroupMessageType) => {
 		console.log(msg);
 	};
 
 	return {
+		type: 'groupMessageMod',
 		handle,
 		whiteList,
 		name: '测试',
