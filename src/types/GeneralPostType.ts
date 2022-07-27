@@ -43,6 +43,9 @@ export type GeneralNoticePost = GeneralPost & {
 	post_type: 'notice';
 	notice_type: PostNoticeType;
 };
+export type NotifyTypePost = GeneralNoticePost & {
+	sub_type: 'honor' | 'poke' | 'lucky_king';
+};
 
 export type GeneralRequestPost = GeneralPost & {
 	post_type: 'request';

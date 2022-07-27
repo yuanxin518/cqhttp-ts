@@ -2,6 +2,7 @@ import {
 	GeneralPost,
 	GeneralMessagePost,
 	GeneralNoticePost,
+	NotifyTypePost,
 } from '../types/GeneralPostType';
 import { WebSocket } from 'ws';
 import friendMessageHandler from '../handler/Message/friendMessageHandler';
@@ -15,6 +16,16 @@ import clientStatusUpdateHandler from '../handler/Notice/clientStatusUpdateHandl
 import friendAddHandler from '../handler/Notice/friendAddHandler';
 import groupAdminUpdateHandler from '../handler/Notice/groupAdminUpdateHandler';
 import GroupCardUpdateHandler from '../handler/Notice/GroupCardUpdateHandler';
+import groupEssenceHandler from '../handler/Notice/groupEssenceHandler';
+import friendMessageRecallHandler from '../handler/Notice/friendMessageRecallHandler';
+import groupBanHandler from '../handler/Notice/groupBanHandler';
+import groupMemberDecreaseHandler from '../handler/Notice/groupMemberDecreaseHandler';
+import groupMemberIncreaseHandler from '../handler/Notice/groupMemberIncreaseHandler';
+import groupUploadFileHandler from '../handler/Notice/groupUploadFileHandler';
+import groupHonorUpdateHandler from '../handler/Notice/groupHonorUpdateHandler';
+import groupLuckyKingHandler from '../handler/Notice/groupLuckyKingHandler';
+import groupPokeHandler from '../handler/Notice/groupPokeHandler';
+import receiveOfflineFileHandler from '../handler/Notice/receiveOfflineFileHandler';
 
 export let CqWebsocket: WebSocket;
 const initLinkServer = (port: number) => {
@@ -54,27 +65,53 @@ const initLinkServer = (port: number) => {
 						clientStatusUpdateHandler(notice as any);
 						break;
 					case 'essence':
+						groupEssenceHandler(notice as any);
+						break;
 					case 'friend_add':
 						friendAddHandler(notice as any);
 						break;
 					case 'friend_recall':
+						friendMessageRecallHandler(notice as any);
+						break;
 					case 'group_admin':
 						groupAdminUpdateHandler(notice as any);
 						break;
 					case 'group_ban':
+						groupBanHandler(notice as any);
 						break;
 					case 'group_card':
 						GroupCardUpdateHandler(notice as any);
 						break;
 					case 'group_decrease':
+						groupMemberDecreaseHandler(notice as any);
 						break;
 					case 'group_increase':
+						groupMemberIncreaseHandler(notice as any);
+						break;
 					case 'group_recall': //群消息撤回
 						groupMessageRecallHandler(notice as any);
 						break;
 					case 'group_upload':
+						groupUploadFileHandler(notice as any);
+						break;
 					case 'notify':
+						const notify: NotifyTypePost = notice as any;
+						switch (notify.sub_type) {
+							case 'honor':
+								groupHonorUpdateHandler(notify as any);
+								break;
+							case 'lucky_king':
+								groupLuckyKingHandler(notify as any);
+								break;
+							case 'poke':
+								groupPokeHandler(notify as any);
+								break;
+							default:
+								break;
+						}
+						break;
 					case 'offline_file':
+						receiveOfflineFileHandler(notice as any);
 					default:
 						break;
 				}

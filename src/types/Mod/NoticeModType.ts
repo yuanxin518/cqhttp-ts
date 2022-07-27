@@ -10,6 +10,7 @@ import { GroupMemberIncreaseType } from '../PostNoticeType/GroupMemberIncreaseTy
 import { GroupMessageRecallType } from '../PostNoticeType/GroupMessageRecallType';
 import { GroupPokeType } from '../PostNoticeType/GroupPokeType';
 import { GroupUploadFileType } from '../PostNoticeType/GroupUploadFileType';
+import { ReceiveOfflineFileType } from '../PostNoticeType/ReceiveOfflineFileType';
 import { BaseModType, BaseWhiteListModType } from './BaseModType';
 /**
  * 客户端状态信息变更
@@ -29,7 +30,7 @@ export type FriendAddModType = BaseModType & {
 /**
  * 好友消息撤回
  */
-export type FriendRecallModType = BaseWhiteListModType & {
+export type FriendMessageRecallModType = BaseWhiteListModType & {
 	type: 'friendRecallMod';
 	handler: (notice: FriendMessageRecallType) => void;
 };
@@ -120,7 +121,7 @@ export type GroupUploadFileModType = BaseWhiteListModType & {
 /**
  * 接受离线消息
  */
-export type ReceiveOfflineType = BaseWhiteListModType & {
-	type: 'receiveOfflineMod';
-	handler: (notice: ReceiveOfflineType) => void;
+export type ReceiveOfflineFileModType = BaseWhiteListModType & {
+	type: 'receiveOfflineFileMod';
+	handler: (notice: ReceiveOfflineFileType) => void;
 };

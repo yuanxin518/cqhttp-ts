@@ -1,7 +1,7 @@
 export {
 	ClientStatusUpdateModType,
 	FriendAddModType,
-	FriendRecallModType,
+	FriendMessageRecallModType,
 	FriendPokeModType,
 	GroupAdminUpdateModType,
 	GroupBanModType,
@@ -14,7 +14,7 @@ export {
 	GroupMessageRecallModType,
 	GroupPokeModType,
 	GroupUploadFileModType,
-	ReceiveOfflineType,
+	ReceiveOfflineFileModType,
 } from './NoticeModType';
 
 export { FriendMessageModType, GroupMessageModType } from './MessageModType';

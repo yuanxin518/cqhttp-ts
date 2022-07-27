@@ -5,7 +5,15 @@ import {
 	GroupAdminUpdateModType,
 	GroupBanModType,
 	GroupCardUpdateModType,
+	GroupEssenceModType,
+	GroupHonorUpdateModType,
+	GroupLuckyKingModType,
+	GroupMemberDecreaseModType,
+	GroupMemberIncreaseModType,
 	GroupMessageRecallModType,
+	GroupPokeModType,
+	GroupUploadFileModType,
+	ReceiveOfflineFileModType,
 } from '../../types/Mod/NoticeModType';
 import { clientStatusUpdateMods } from './clientStatusUpdateHandler';
 import { friendAddMods } from './friendAddHandler';
@@ -13,7 +21,15 @@ import { friendPokeMods } from './friendPokeHandler';
 import { groupAdminUpdateMods } from './groupAdminUpdateHandler';
 import { groupBanMods } from './groupBanHandler';
 import { groupCardUpdateMods } from './GroupCardUpdateHandler';
+import { groupEssenceMods } from './groupEssenceHandler';
+import { groupHonorUpdateMods } from './groupHonorUpdateHandler';
+import { groupLuckyKingMods } from './groupLuckyKingHandler';
+import { groupMemberDecreaseMods } from './groupMemberDecreaseHandler';
+import { groupMemberIncreaseMods } from './groupMemberIncreaseHandler';
 import { groupMessageRecallMods } from './groupMessageRecallHandler';
+import { groupPokeMods } from './groupPokeHandler';
+import { groupUploadFileMods } from './groupUploadFileHandler';
+import { receiveOfflineMods } from './receiveOfflineFileHandler';
 
 export const useNoticeMod = (
 	mod: Array<
@@ -24,6 +40,14 @@ export const useNoticeMod = (
 		| FriendPokeModType
 		| GroupAdminUpdateModType
 		| GroupCardUpdateModType
+		| GroupEssenceModType
+		| GroupHonorUpdateModType
+		| GroupLuckyKingModType
+		| GroupMemberDecreaseModType
+		| GroupMemberIncreaseModType
+		| GroupPokeModType
+		| GroupUploadFileModType
+		| ReceiveOfflineFileModType
 	>
 ) => {
 	// 添加处理器
@@ -51,6 +75,30 @@ export const useNoticeMod = (
 					break;
 				case 'groupCardUpdateMod':
 					groupCardUpdateMods.push(item);
+					break;
+				case 'groupEssenceMod':
+					groupEssenceMods.push(item);
+					break;
+				case 'groupHonorUpdateMod':
+					groupHonorUpdateMods.push(item);
+					break;
+				case 'groupLuckyKingMod':
+					groupLuckyKingMods.push(item);
+					break;
+				case 'groupMemberDecreaseMod':
+					groupMemberDecreaseMods.push(item);
+					break;
+				case 'groupMemberIncreaseMod':
+					groupMemberIncreaseMods.push(item);
+					break;
+				case 'groupPokeMod':
+					groupPokeMods.push(item);
+					break;
+				case 'groupUploadFileMod':
+					groupUploadFileMods.push(item);
+					break;
+				case 'receiveOfflineFileMod':
+					receiveOfflineMods.push(item);
 					break;
 			}
 		});
