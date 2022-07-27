@@ -1,4 +1,3 @@
-import friendMessageHandler from './Message/friendMessageHandler';
 import { useMessageMod } from './Message/useMessageMod';
 import { useNoticeMod } from './Notice/useNoticeMod';
 
