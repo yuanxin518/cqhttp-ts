@@ -1,7 +1,7 @@
 import { GroupRecallType } from '../PostNoticeType/GroupRecallType';
-import { BaseModType } from './baseModType';
+import { BaseWhiteListModType } from './BaseModType';
 
-export type GroupRecallModType = BaseModType & {
+export type GroupRecallModType = BaseWhiteListModType & {
 	type: 'groupRecallMod';
 	handler: (notice: GroupRecallType) => void;
 };

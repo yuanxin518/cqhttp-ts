@@ -1,10 +1,6 @@
-import { useMessageMod } from './handler/Message/useMessageMod';
+import { useMessageMod } from './handler';
 import { useNoticeMod } from './handler/Notice/useNoticeMod';
-import test from './mods/friendMessageMod.ts/test';
-import { testNotice } from './mods/testNotice';
 import linkServer from './server/linkServer';
 
-linkServer(8080);
-
-useMessageMod([test([])]);
-useNoticeMod([testNotice([])]);
+export default linkServer;
+export const useMod = { useMessageMod, useNoticeMod };
