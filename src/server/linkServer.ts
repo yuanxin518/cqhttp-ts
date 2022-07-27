@@ -14,6 +14,7 @@ import groupMessageRecallHandler from '../handler/Notice/groupMessageRecallHandl
 import clientStatusUpdateHandler from '../handler/Notice/clientStatusUpdateHandler';
 import friendAddHandler from '../handler/Notice/friendAddHandler';
 import groupAdminUpdateHandler from '../handler/Notice/groupAdminUpdateHandler';
+import GroupCardUpdateHandler from '../handler/Notice/GroupCardUpdateHandler';
 
 export let CqWebsocket: WebSocket;
 const initLinkServer = (port: number) => {
@@ -61,8 +62,12 @@ const initLinkServer = (port: number) => {
 						groupAdminUpdateHandler(notice as any);
 						break;
 					case 'group_ban':
-					case 'group_card	':
-					case 'group_decrease	':
+						break;
+					case 'group_card':
+						GroupCardUpdateHandler(notice as any);
+						break;
+					case 'group_decrease':
+						break;
 					case 'group_increase':
 					case 'group_recall': //群消息撤回
 						groupMessageRecallHandler(notice as any);
