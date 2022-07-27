@@ -7,7 +7,7 @@ import { GroupCardUpdateType } from '../PostNoticeType/GroupCardUpdateType';
 import { GroupHonorUpdateType } from '../PostNoticeType/GroupHonorUpdateType';
 import { GroupMemberDecreaseType } from '../PostNoticeType/GroupMemberDecreaseType';
 import { GroupMemberIncreaseType } from '../PostNoticeType/GroupMemberIncreaseType';
-import { GroupRecallType } from '../PostNoticeType/GroupMessageRecallType';
+import { GroupMessageRecallType } from '../PostNoticeType/GroupMessageRecallType';
 import { GroupPokeType } from '../PostNoticeType/GroupPokeType';
 import { GroupUploadFileType } from '../PostNoticeType/GroupUploadFileType';
 import { BaseModType, BaseWhiteListModType } from './BaseModType';
@@ -99,9 +99,9 @@ export type GroupMemberIncreaseModType = BaseWhiteListModType & {
 /**
  * 群消息撤回
  */
-export type GroupRecallModType = BaseWhiteListModType & {
-	type: 'groupRecallMod';
-	handler: (notice: GroupRecallType) => void;
+export type GroupMessageRecallModType = BaseWhiteListModType & {
+	type: 'groupMessageRecallMod';
+	handler: (notice: GroupMessageRecallType) => void;
 };
 /**
  * 群戳一戳

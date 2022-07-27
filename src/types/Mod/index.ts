@@ -11,7 +11,7 @@ export {
 	GroupLuckyKingModType,
 	GroupMemberDecreaseModType,
 	GroupMemberIncreaseModType,
-	GroupRecallModType,
+	GroupMessageRecallModType,
 	GroupPokeModType,
 	GroupUploadFileModType,
 	ReceiveOfflineType,

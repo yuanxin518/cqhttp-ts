@@ -4,22 +4,21 @@ import {
 	FriendPokeModType,
 	GroupAdminUpdateModType,
 	GroupBanModType,
-	GroupRecallModType,
+	GroupMessageRecallModType,
 } from '../../types/Mod/NoticeModType';
 import { clientStatusUpdateMods } from './clientStatusUpdateHandler';
 import { friendAddMods } from './friendAddHandler';
-import { friendPokeMods } from './FriendPokeHandler';
-import { groupAdminUpdateMods } from './GroupAdminUpdateHandler';
+import { friendPokeMods } from './friendPokeHandler';
+import { groupAdminUpdateMods } from './groupAdminUpdateHandler';
 import { groupBanMods } from './groupBanHandler';
-import { groupRecallMods } from './groupRecallHandler';
+import { groupMessageRecallMods } from './groupMessageRecallHandler';
 
 export const useNoticeMod = (
 	mod: Array<
-		| GroupRecallModType
 		| FriendAddModType
 		| ClientStatusUpdateModType
 		| GroupBanModType
-		| GroupRecallModType
+		| GroupMessageRecallModType
 		| FriendPokeModType
 		| GroupAdminUpdateModType
 	>
@@ -29,8 +28,8 @@ export const useNoticeMod = (
 		mod.forEach((item) => {
 			if (item.handler === undefined) return;
 			switch (item.type) {
-				case 'groupRecallMod':
-					groupRecallMods.push(item);
+				case 'groupMessageRecallMod':
+					groupMessageRecallMods.push(item);
 					break;
 				case 'friendAddMod':
 					friendAddMods.push(item);

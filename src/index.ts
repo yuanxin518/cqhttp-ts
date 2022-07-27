@@ -17,5 +17,3 @@ export * as PostTypes from './types';
 export * as ModTypes from './types/Mod';
 // useMod
 export const useMod = { useMessageMod, useNoticeMod };
-// handler
-export * as handler from './handler/handler';
