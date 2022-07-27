@@ -3,7 +3,8 @@
 	"version": "1.1.4-beta.0",
 	"description": "go-cqhttp的ts开发框架",
 	"main": "dist/index.js",
-	"module": "esnext",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.mjs",
 	"files": [
 		"dist"
 	],
