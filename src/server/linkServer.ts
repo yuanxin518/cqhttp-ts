@@ -1,8 +1,17 @@
-import { GeneralPost, MessagePost } from '../types/GeneralPostType';
+import {
+	GeneralPost,
+	MessagePost,
+	GeneralNoticePost,
+} from '../types/GeneralPostType';
 import { WebSocket } from 'ws';
 import friendMessageHandler from '../handler/Message/friendMessageHandler';
 import groupMessageHandler from '../handler/Message/groupMessageHandler';
-import bindReply from './bindFunction/bindReply';
+import bindFriendMessageReply from './bindFunction/bindFriendMessageReply';
+import { FriendMessageType } from '../types/PostMessageType/FriendMessageType';
+import bindGroupMessageReply from './bindFunction/bindGroupMessageReply';
+import { GroupMessageType } from '../types/PostMessageType/GroupMessageType';
+import groupRecallHandler from '../handler/Notice/groupRecallHandler';
+import { GroupRecallType } from '../types/PostNoticeType/GroupRecallType';
 
 export let CqWebsocket: WebSocket;
 const initLinkServer = (port: number) => {
@@ -26,12 +35,37 @@ const initLinkServer = (port: number) => {
 			case 'message':
 				const message: MessagePost = data as any;
 				// 绑定自动回复函数
-				bindReply(CqWebsocket, message);
 				if (message.message_type === 'private') {
+					bindFriendMessageReply(CqWebsocket, message as FriendMessageType);
 					friendMessageHandler(message as any);
 				} else if (message.message_type === 'group') {
+					bindGroupMessageReply(CqWebsocket, message as GroupMessageType);
 					groupMessageHandler(message as any);
 				}
+				break;
+			//notice上报
+			case 'notice':
+				const notice: GeneralNoticePost = data as any;
+				switch (notice.notice_type) {
+					case 'client_status':
+					case 'essence':
+					case 'friend_add':
+					case 'friend_recall':
+					case 'group_admin':
+					case 'group_ban':
+					case 'group_card	':
+					case 'group_decrease	':
+					case 'group_increase':
+					case 'group_recall': //群消息撤回
+						groupRecallHandler(notice as GroupRecallType);
+					case 'group_upload':
+					case 'notify':
+					case 'offline_file':
+					default:
+						break;
+				}
+				break;
+			default:
 				break;
 		}
 	});

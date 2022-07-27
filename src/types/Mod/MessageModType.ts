@@ -1,21 +1,13 @@
 import { FriendMessageType } from '../PostMessageType/FriendMessageType';
 import { GroupMessageType } from '../PostMessageType/GroupMessageType';
+import { BaseModType } from './baseModType';
 
-export type FriendMessageModType = {
+export type FriendMessageModType = BaseModType & {
 	type: 'friendMessageMod';
-	/**
-	 * 设置mod的name
-	 */
-	name: string;
-	handle: (msg: FriendMessageType) => void;
-	whiteList: number[];
+	handler: (msg: FriendMessageType) => void;
 };
-export type GroupMessageModType = {
+
+export type GroupMessageModType = BaseModType & {
 	type: 'groupMessageMod';
-	/**
-	 * 设置mod的name
-	 */
-	name: string;
-	handle: (msg: GroupMessageType) => void;
-	whiteList: number[];
+	handler: (msg: GroupMessageType) => void;
 };

@@ -6,12 +6,10 @@ import { GroupMessageType } from '../../types/PostMessageType/GroupMessageType';
  */
 export const groupMessageMods: GroupMessageModType[] = [];
 
-const groupMessageHandler = (msg: GroupMessageType) => {
+export default (msg: GroupMessageType) => {
 	groupMessageMods.forEach((item) => {
 		if (item.whiteList.includes(msg.group_id)) {
-			item.handle(msg);
+			item.handler(msg);
 		}
 	});
 };
-
-export default groupMessageHandler;

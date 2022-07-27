@@ -1,5 +1,9 @@
-import type { GeneralEventTypes } from './GeneralEventTypes';
-import { MessageSenderType } from './MessageType/MessageSenderType';
+import type {
+	GeneralEventTypes,
+	PostMessageType,
+	PostNoticeType,
+} from './GeneralEventTypes';
+import { MessageSenderType } from './PostMessageType/MessageSenderType';
 
 export type GeneralPost = {
 	/**
@@ -30,9 +34,25 @@ export type MessagePost = GeneralPost & {
 	/**
 	 * 消息的类型
 	 */
-	message_type: 'group' | 'private';
+	message_type: PostMessageType;
+};
+
+export type GeneralNoticePost = GeneralPost & {
+	notice_type: PostNoticeType;
 	/**
-	 * 快速回复
+	 * 群号
 	 */
-	reply: (replyMessage: string | number, autoEscape?: boolean) => void;
+	group_id: number;
+	/**
+	 * 消息发送者QQ
+	 */
+	user_id: number;
+	/**
+	 * 操作人QQ
+	 */
+	operator_id: number;
+	/**
+	 * 被撤回的消息的id
+	 */
+	message_id: number;
 };

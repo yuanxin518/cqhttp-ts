@@ -1,8 +1,8 @@
 import { WebSocket } from 'ws';
 import createSendPoint from '../../handler/createSendPoint';
-import { MessagePost } from '../../types/GeneralPostType';
+import { FriendMessageType } from '../../types/PostMessageType/FriendMessageType';
 
-export default (ws: WebSocket, msg: MessagePost) => {
+export default (ws: WebSocket, msg: FriendMessageType) => {
 	msg.reply = (replyMessage: string | number, autoEscape?: boolean) => {
 		if (typeof replyMessage === 'number') {
 			replyMessage = replyMessage.toString();
