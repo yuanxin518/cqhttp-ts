@@ -1,6 +1,6 @@
 {
 	"name": "cqhttp-ts",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "go-cqhttp的ts开发框架",
 	"main": "src/index.ts",
 	"module": "esnext",
