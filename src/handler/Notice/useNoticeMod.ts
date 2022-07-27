@@ -2,12 +2,14 @@ import {
 	ClientStatusUpdateModType,
 	FriendAddModType,
 	FriendPokeModType,
+	GroupAdminUpdateModType,
 	GroupBanModType,
 	GroupRecallModType,
 } from '../../types/Mod/NoticeModType';
 import { clientStatusUpdateMods } from './clientStatusUpdateHandler';
 import { friendAddMods } from './friendAddHandler';
 import { friendPokeMods } from './FriendPokeHandler';
+import { groupAdminUpdateMods } from './GroupAdminUpdateHandler';
 import { groupBanMods } from './groupBanHandler';
 import { groupRecallMods } from './groupRecallHandler';
 
@@ -19,6 +21,7 @@ export const useNoticeMod = (
 		| GroupBanModType
 		| GroupRecallModType
 		| FriendPokeModType
+		| GroupAdminUpdateModType
 	>
 ) => {
 	// 添加处理器
@@ -40,6 +43,9 @@ export const useNoticeMod = (
 					break;
 				case 'friendPokeMod':
 					friendPokeMods.push(item);
+					break;
+				case 'groupAdminUpdateMod':
+					groupAdminUpdateMods.push(item);
 					break;
 			}
 		});
