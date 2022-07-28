@@ -1,14 +1,13 @@
 import { CqWebsocket } from '../server/linkServer';
 import {
-	SendGroupMessageApiResponseType,
-	SendGroupMessageApiType,
-} from '../types/api';
-
+	SendGroupForwardMessageApiResponseType,
+	SendGroupForwardMessageApiType,
+} from '../types/api/SendGroupForwardMessageApi';
 import createSendPoint from './tool/createSendPoint';
 import sendAndListen from './tool/sendAndListen';
 
 export default (
-	param: SendGroupMessageApiType
-): Promise<SendGroupMessageApiResponseType> => {
+	param: SendGroupForwardMessageApiType
+): Promise<SendGroupForwardMessageApiResponseType> => {
 	return sendAndListen(CqWebsocket, createSendPoint('send_group_msg', param));
 };

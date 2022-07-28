@@ -87,4 +87,5 @@ const friendMessageModTest = (
 > CqApi是一个异步函数，可以获取到响应结果。
 * CqApi.sendPrivateMessageApi 发送私聊消息
 * CqApi.sendGroupMessageApi 发送群消息
+* sendGroupForwardMessageApi 群合并转发消息
 

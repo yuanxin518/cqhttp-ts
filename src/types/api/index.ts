@@ -1,9 +1,8 @@
-// api
 export {
-	SendPrivateMessageType,
-	SendPrivateMessageResponseType,
+	SendPrivateMessageApiType,
+	SendPrivateMessageApiResponseType,
 } from './SendPrivateMessageApi';
 export {
-	SendGroupMessageResponseType,
-	SendGroupMessageType,
+	SendGroupMessageApiResponseType,
+	SendGroupMessageApiType,
 } from './SendGroupMessageApi';
