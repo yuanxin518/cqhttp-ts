@@ -1,4 +1,5 @@
 import { GeneralMessagePost } from '../GeneralPostType';
+import { Anonymous } from '../Structure';
 
 /**
  * https://docs.go-cqhttp.org/api/#%E5%8F%91%E9%80%81%E7%BE%A4%E6%B6%88%E6%81%AF
@@ -12,7 +13,7 @@ export type GroupMessageType = GeneralMessagePost & {
 	/**
 	 * 匿名信息
 	 */
-	anonymous: Object | null;
+	anonymous: Anonymous | null;
 	/**
 	 * 快速回复
 	 */
