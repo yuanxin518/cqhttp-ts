@@ -10,7 +10,7 @@
 	],
 	"scripts": {
 		"build": "tsup",
-		"dev": "nodemon",
+		"dev": "npm run build && nodemon demo/index.ts",
 		"release": "bumpp --commit  --tag --push"
 	},
 	"author": "",

@@ -1,3 +1,4 @@
-import sendPrivateMessage from './sendPrivateMessage';
+import sendGroupMessageApi from './sendGroupMessageApi';
+import sendPrivateMessageApi from './sendPrivateMessageApi';
 
-export const CqApi = { sendPrivateMessage };
+export const CqApi = { sendGroupMessageApi, sendPrivateMessageApi };
