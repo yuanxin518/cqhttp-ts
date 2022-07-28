@@ -1,3 +1,5 @@
+import { Role } from '../Structure';
+
 export namespace MessageSender {
 	type BaseSender = {
 		user_id: number;
@@ -10,7 +12,7 @@ export namespace MessageSender {
 		card: string;
 		area: string;
 		level: string;
-		role: 'owner' | 'admin' | 'member';
+		role: Role;
 		title: string;
 	};
 }

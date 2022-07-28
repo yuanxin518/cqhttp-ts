@@ -1,4 +1,5 @@
 import { GeneralNoticePost } from '../GeneralPostType';
+import { GroupHonorType } from '../Structure';
 
 /**
  * 群内荣誉等级变更提示
@@ -8,8 +9,5 @@ export type GroupHonorUpdateType = GeneralNoticePost & {
 	notice_type: 'notify';
 	sub_type: 'honor';
 	user_id: number;
-	/**
-	 * 龙王、群聊之火、快乐源泉
-	 */
-	honor_type: 'talkative' | 'performer' | 'emotion';
+	honor_type: GroupHonorType;
 };

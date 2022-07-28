@@ -1,38 +1,69 @@
-export {
-	DeleteMessageApiReponseType,
-	DeleteMessageApiType,
-} from './DeleteMessageApi';
-
-export {
-	GetForwardMessageApiResponseType,
-	GetForwardMessageApiType,
-} from './GetForwardMessageApi';
-
-export { GetImageApiResponseType, GetImageApiType } from './GetImageApi';
-
-export { GetMessageApiResponseType, GetMessageApiType } from './GetMessageApi';
-
-export {
-	MarkMsgAsReadApiResponseType,
-	MarkMsgAsReadApiType,
-} from './MarkMsgAsReadApi';
-
-export {
-	SendGroupForwardMessageApiResponseType,
-	SendGroupForwardMessageApiType,
-} from './SendGroupForwardMessageApi';
-
-export {
-	SendGroupMessageApiResponseType,
-	SendGroupMessageApiType,
-} from './SendGroupMessageApi';
-
-export {
-	SendMessageApiResponseType,
-	SendMessageApiType,
-} from './SendMessageApi';
-
-export {
-	SendPrivateMessageApiType,
-	SendPrivateMessageApiResponseType,
-} from './SendPrivateMessageApi';
+export * from './CanSendImageApi';
+export * from './CanSendRecordApi';
+export * from './CheckUrlSafelyApi';
+export * from './CleanCacheApi';
+export * from './CreateGroupFileFolderApi';
+export * from './DeleteEssenceMsgApi';
+export * from './DeleteFriendApi';
+export * from './DeleteGroupFileApi';
+export * from './DeleteGroupFolderApi';
+export * from './DeleteMessageApi';
+export * from './DownloadFileApi';
+export * from './GetCookieApi';
+export * from './GetCredentialsApi';
+export * from './GetCSRFTokenApi';
+export * from './GetEssenceMsgListApi';
+export * from './GetForwardMessageApi';
+export * from './GetFriendListApi';
+export * from './GetGroupAtAllRemainApi';
+export * from './GetGroupFilesByFolderApi';
+export * from './GetGroupFileSystemInfoApi';
+export * from './GetGroupFileUrlApi';
+export * from './getGroupHonorInfoApi';
+export * from './GetGroupInfoApi';
+export * from './GetGroupListApi';
+export * from './GetGroupMemberInfoApi';
+export * from './GetGroupMemberListApi';
+export * from './GetGroupMsgHistoryApi';
+export * from './GetGroupNoticeApi';
+export * from './GetGroupRootFilesApi';
+export * from './GetGroupSystemMsgApi';
+export * from './GetImageApi';
+export * from './GetLoginInfoApi';
+export * from './GetMessageApi';
+export * from './GetModelShowApi';
+export * from './GetOnlineClientsApi';
+export * from './GetRecordApi';
+export * from './GetStatusApi';
+export * from './GetStrangerInfoApi';
+export * from './GetUnidirectionalFriendListApi';
+export * from './GetVersionInfoApi';
+export * from './MarkMsgAsReadApi';
+export * from './OcrImageApi';
+export * from './ReloadEventFilterApi';
+export * from './SendGroupForwardMessageApi';
+export * from './SendGroupMessageApi';
+export * from './SendGroupNoticeApi';
+export * from './SendGroupSignApi';
+export * from './SendMessageApi';
+export * from './SendObjType';
+export * from './SendPrivateMessageApi';
+export * from './SetEssenceMsgApi';
+export * from './SetFriendAddRequestApi';
+export * from './SetGroupAddRequestApi';
+export * from './SetGroupAdminApi';
+export * from './SetGroupAnonymousApi';
+export * from './SetGroupAnonymousBanApi';
+export * from './SetGroupBanApi';
+export * from './SetGroupCardApi';
+export * from './SetGroupKickApi';
+export * from './SetGroupLeaveApi';
+export * from './SetGroupNameApi';
+export * from './SetGroupPortraitApi';
+export * from './SetGroupSpecialTitleApi';
+export * from './SetGroupWholeBanApi';
+export * from './SetModelShowApi';
+export * from './SetQQProfileApi';
+export * from './SetRestartApi';
+export * from './UploadGroupFileApi';
+export * from './UploadPrivateFileApi';
