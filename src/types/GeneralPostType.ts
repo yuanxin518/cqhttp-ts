@@ -4,7 +4,7 @@ import type {
 	PostNoticeType,
 	PostRequestType,
 } from './GeneralEventTypes';
-import { MessageSenderType } from './PostMessageType/MessageSenderType';
+import { MessageSender } from './PostMessageType/MessageSenderType';
 
 export type GeneralPost = {
 	/**
@@ -32,7 +32,7 @@ export type GeneralMessagePost = GeneralPost & {
 	message: string;
 	raw_message: string;
 	font: number;
-	sender: MessageSenderType;
+	sender: MessageSender.Friend | MessageSender.Group;
 	/**
 	 * 消息的类型
 	 */

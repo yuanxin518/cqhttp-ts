@@ -16,11 +16,3 @@ export namespace MessageSender {
 		title: string;
 	};
 }
-
-export type MessageSenderType =
-	| 'friend'
-	| 'group'
-	| 'group_self'
-	| 'normal'
-	| 'anonymous'
-	| 'notice';
