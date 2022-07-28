@@ -2,6 +2,7 @@
 go-cqhttp的ts开发框架
 
 ## 快速开始
+首先开启go-cqhttp的websocket，登录到一个qq。
 ```
 npm i cqhttp-ts
 ```
