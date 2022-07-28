@@ -13,11 +13,13 @@ import setGroupAdminApi from './setGroupAdminApi';
 import setGroupAnonymousApi from './setGroupAnonymousApi';
 import setGroupAnonymousBanApi from './setGroupAnonymousBanApi';
 import setGroupBanApi from './setGroupBanApi';
-import SetGroupCardApi from './SetGroupCardApi';
+import setGroupCardApi from './setGroupCardApi';
 import setGroupLeaveApi from './setGroupLeaveApi';
 import setGroupNameApi from './setGroupNameApi';
 import setGroupSpecialTitleApi from './setGroupSpecialTitleApi';
 import setGroupWholeBanApi from './setGroupWholeBanApi';
+import setFriendAddRequestApi from './setFriendAddRequestApi';
+import getLoginInfoApi from './getLoginInfoApi';
 export const CqApi = {
 	deleteMessageApi,
 	GetForwardMessageApi,
@@ -34,9 +36,12 @@ export const CqApi = {
 	setGroupAnonymousApi,
 	setGroupAnonymousBanApi,
 	setGroupBanApi,
-	SetGroupCardApi,
+	setGroupCardApi,
 	setGroupLeaveApi,
 	setGroupNameApi,
 	setGroupSpecialTitleApi,
 	setGroupWholeBanApi,
+	setFriendAddRequestApi,
+	getLoginInfoApi,
+	// 从设置登录号资料开始
 };
