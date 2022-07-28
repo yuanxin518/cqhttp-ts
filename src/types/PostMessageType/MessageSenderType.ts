@@ -1,10 +1,10 @@
-import { Role } from '../Structure';
+import { Role, Sex } from '../Structure';
 
 export namespace MessageSender {
 	type BaseSender = {
 		user_id: number;
 		nickname: string;
-		sex: 'male' | 'female' | unknown;
+		sex: Sex;
 		age: number;
 	};
 	export type Friend = BaseSender & {};
