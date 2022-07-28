@@ -1,3 +1,4 @@
+import { noticeModStore } from '../../modMonitor';
 import {
 	ClientStatusUpdateModType,
 	FriendAddModType,
@@ -101,6 +102,7 @@ export const useNoticeMod = (
 					receiveOfflineMods.push(item);
 					break;
 			}
+			noticeModStore.push(item);
 		});
 		return;
 	}

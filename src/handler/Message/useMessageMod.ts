@@ -1,3 +1,4 @@
+import { messageModStore } from '../../modMonitor';
 import {
 	FriendMessageModType,
 	GroupMessageModType,
@@ -6,7 +7,7 @@ import { friendMessageMods } from './friendMessageHandler';
 import { groupMessageMods } from './groupMessageHandler';
 
 export const useMessageMod = (
-	mod: GroupMessageModType[] | FriendMessageModType[]
+	mod: Array<GroupMessageModType | FriendMessageModType>
 ) => {
 	// 添加处理器
 	if (mod instanceof Array) {
@@ -20,7 +21,7 @@ export const useMessageMod = (
 					groupMessageMods.push(item);
 					break;
 			}
+			messageModStore.push(item);
 		});
-		return;
 	}
 };
