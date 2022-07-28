@@ -19,7 +19,7 @@ export * from './GetGroupAtAllRemainApi';
 export * from './GetGroupFilesByFolderApi';
 export * from './GetGroupFileSystemInfoApi';
 export * from './GetGroupFileUrlApi';
-export * from './getGroupHonorInfoApi';
+export * from './GetGroupHonorInfoApi';
 export * from './GetGroupInfoApi';
 export * from './GetGroupListApi';
 export * from './GetGroupMemberInfoApi';

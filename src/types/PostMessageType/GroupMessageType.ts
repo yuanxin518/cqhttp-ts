@@ -26,10 +26,8 @@ export type GroupMessageType = GeneralMessagePost & {
 		 * 发送者踢出群聊
 		 */
 		isKick?: boolean,
-		ban?: {
-			isBan: boolean;
-			ban_duration: number;
-		},
+		ban?: boolean,
+		ban_duration?: number,
 		autoEscape?: boolean
 	) => void;
 };

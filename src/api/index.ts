@@ -54,7 +54,7 @@ import getStatusApi from './getStatusApi';
 import getStrangerInfoApi from './getStrangerInfoApi';
 import getUnidirectionalFriendListApi from './getUnidirectionalFriendListApi';
 import getVersionInfoApi from './getVersionInfoApi';
-import OcrImageApi from './OcrImageApi';
+import ocrImageApi from './ocrImageApi';
 import reloadEventFilterApi from './reloadEventFilterApi';
 import sendGroupNoticeApi from './sendGroupNoticeApi';
 import setEssenceMsgApi from './setEssenceMsgApi';
@@ -106,7 +106,7 @@ export const CqApi = {
 	getUnidirectionalFriendListApi,
 	getVersionInfoApi,
 	markMessageAsReadApi,
-	OcrImageApi,
+	ocrImageApi,
 	reloadEventFilterApi,
 	sendGroupForwardMessageApi,
 	sendGroupMessageApi,
