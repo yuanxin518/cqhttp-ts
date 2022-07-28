@@ -21,4 +21,3 @@ export const modMonitor = { messageModStore, noticeModStore, requestModStore };
 // 可用内置type
 //api发送和请求类型
 export * as apis from './types/api';
-

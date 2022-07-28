@@ -2,7 +2,9 @@
  * 获取版本信息
  * https://docs.go-cqhttp.org/api/#%E8%8E%B7%E5%8F%96%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF
  */
-export type GetVersionInfoApi = {
+export type GetVersionInfoApiType = {};
+
+export type GetVersionInfoApiResponseType = {
 	/**
 	 * 应用标识, 如 go-cqhttp 固定值
 	 * 默认 go-cqhttp
