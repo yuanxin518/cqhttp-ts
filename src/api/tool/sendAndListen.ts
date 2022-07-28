@@ -1,5 +1,4 @@
 import WebSocket from 'ws';
-import { SendObjType } from '../../types/api/SendObjType';
 
 export default (ws: WebSocket, send: string): Promise<any> => {
 	return new Promise((resolve) => {

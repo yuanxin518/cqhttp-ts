@@ -7,33 +7,33 @@ npm i cqhttp-ts
 ```
 ```
 import linkServer, { ModTypes, PostTypes, useMod } from 'cqhttp-ts';
-
-linkServer(8080);
+linkServer(8080); //需要开启websocket
 
 useMod.useMessageMod([friendMessageModTest([2389451262]),xxx(),xxx().....]);
 //类似这样来加载更多的mod
 
 ```
 ```
-//ModTypes 提供了所有的mod类型。
-import {CqApi} from 'cqhttp-ts'
+import { CqApi,ModTypes,PostTypes} from 'cqhttp-ts';
 
-const friendMessageModTest = (
-	whiteList: number[] | false
-): ModTypes.FriendMessageModType => {
+export default (whiteList: number[] | false): ModTypes.GroupMessageModType => {
+	const handler = async (msg: PostTypes.GroupMessageType) => {
+		const res = await CqApi.setEssenceMsgApi({
+			message_id: msg.message_id,
+		});//注意 api始终需要传入一个参数对象，即使内容为空。
+		console.log(res);//得到相应的结果。如果该条消息是精华等错误，则返回 调用api失败
 
-	//每个消息都会经过handler来处理。不同的ModType对应不同的PostType
-	const handler = (msg: PostTypes.FriendMessageType) => {
-		msg.reply('你好');
-		CqApi.xxx;//这是实现的主动调用的api。
+		console.log(modMonitor.messageModStore)//得到当前所有正在运行的消息mod列表,可以在任何地方使用
 	};
+
 	return {
-		name: '测试',
-		type: 'friendMessageMod',
-		whiteList,
+		type: 'groupMessageMod',
+		name: '把消息设置为精华消息',
+		whiteList,			//如果whiteList是false,则对所有消息都响应。有些mod没有设置白名单的字段。
 		handler,
 	};
 };
+
 ```
 
 ## *如何实现拓展
@@ -79,9 +79,73 @@ modMonitor对象。 如果你导入的mod是MessageMod，那么你可以在modMo
 ## 实现api
 > CqApi是一个异步函数，可以获取到响应结果。
 > 在CqApi中调用下列函数
-* sendPrivateMessageApi 发送私聊消息
-* sendGroupMessageApi 发送群消息
-* sendGroupForwardMessageApi 群合并转发消息
+
+* canSendImageApi,
+* canSendRecordApi,
+* checkUrlSafelyApi,
+* cleanCacheApiExpect,
+* createGroupFileFolderApi,
+* deleteEssenceMsgApi,
+* deleteFriendApi,
+* deleteGroupFileApi,
+* deleteGroupFolderApi,
+* deleteMessageApi,
+* downloadFileApi,
+* getCookiesApiExpect,
+* getCredentialsApiExpect,
+* getCSRFTokenApiExpect,
+* getEssenceMsgListApi,
+* GetForwardMessageApi,
+* getFriendListApi,
+* getGroupAtAllRemainApi,
+* getGroupFileSystemInfoApi,
+* getGroupFilesByFolderApi,
+* getGroupFileUrlApi,
+* getGroupHonorInfoApi,
+* getGroupInfoApi,
+* getGroupListApi,
+* getGroupMemberListApi,
+* getGroupMessageHistoryApi,
+* getGroupNoticeApi,
+* getGroupRootFilesApi,
+* getGroupSystemMsgApi,
+* getImageApi,
+* getLoginInfoApi,
+* getMessageApi,
+* getModelShowApi,
+* getOnlineClientsApi,
+* getRecordApiExpect,
+* getStatusApi,
+* getStrangerInfoApi,
+* getUnidirectionalFriendListApi,
+* getVersionInfoApi,
+* markMessageAsReadApi,
+* ocrImageApi,
+* reloadEventFilterApi,
+* sendGroupForwardMessageApi,
+* sendGroupMessageApi,
+* sendGroupNoticeApi,
+* sendGroupSignApi,
+* sendMessageApi,
+* sendPrivateMessageApi,
+* setEssenceMsgApi,
+* setFriendAddRequestApi,
+* setGroupAddRequestApi,
+* setGroupAdminApi,
+* setGroupAnonymousApi,
+* setGroupAnonymousBanApi,
+* setGroupBanApi,
+* setGroupCardApi,
+* setGroupLeaveApi,
+* setGroupNameApi,
+* setGroupPortraitApi,
+* setGroupSpecialTitleApi,
+* setGroupWholeBanApi,
+* setModelShowApi,
+* setQQprofileApi,
+* setRestartApi,
+* uploadGroupFileApi,
+* uploadPrivateFileApi,
 
 
 ## 响应流程
