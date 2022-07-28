@@ -13,8 +13,17 @@
 		"dev": "npm run build && nodemon demo/index.ts",
 		"release": "bumpp --commit  --tag --push"
 	},
-	"author": "",
-	"license": "ISC",
+	"author": "circkoooooo",
+	"license": "AGPL-3.0",
+	"keywords": [
+		"go-cqhttp",
+		"onebot",
+		"typescript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Circkoooooo/cqhttp-ts"
+	},
 	"dependencies": {
 		"@types/node": "^18.6.1",
 		"@types/ws": "^8.5.3",
