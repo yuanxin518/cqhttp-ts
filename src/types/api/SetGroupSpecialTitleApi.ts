@@ -14,3 +14,5 @@ export type SetGroupSpecialTitleApiType = {
 	 */
 	duration?: number;
 };
+
+export type SetGroupSpecialTitleApiResponseType = {};

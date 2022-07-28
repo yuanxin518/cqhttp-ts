@@ -3,7 +3,6 @@ import {
 	MarkMsgAsReadApiResponseType,
 	MarkMsgAsReadApiType,
 } from '../types/api';
-
 import createSendPoint from './tool/createSendPoint';
 import sendAndListen from './tool/sendAndListen';
 

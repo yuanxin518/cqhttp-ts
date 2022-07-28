@@ -10,3 +10,4 @@ export type SetGroupAdminApiType = {
 	 */
 	enable?: boolean;
 };
+export type SetGroupAdminApiResponseType = {};
