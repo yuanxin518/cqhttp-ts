@@ -1,6 +1,6 @@
 {
 	"name": "cqhttp-ts",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"description": "go-cqhttp的ts开发框架",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
