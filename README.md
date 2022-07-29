@@ -168,7 +168,7 @@ export default (whiteList: number[] | false): ModTypes.GroupMessageModType => {
 * setGroupSpecialTitleApi,
 * setGroupWholeBanApi,
 * setModelShowApi,
-* setQQprofileApi,
+* setQQProfileApi,
 * setRestartApi,
 * uploadGroupFileApi,
 * uploadPrivateFileApi,
