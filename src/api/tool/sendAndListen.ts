@@ -6,11 +6,12 @@ export default (ws: WebSocket, send: string): Promise<any> => {
 		const echo = sendObj.echo;
 		ws.on('message', (res: Buffer) => {
 			const resObj = JSON.parse(res.toString());
-
-			if (resObj.status === 'ok' && resObj.echo === echo) {
-				resolve(resObj.data);
-			} else {
-				resolve('api调用失败');
+			if (resObj.echo === echo) {
+				if (resObj.status === 'ok') {
+					resolve(resObj.data);
+				} else {
+					resolve(resObj);
+				}
 			}
 		});
 
