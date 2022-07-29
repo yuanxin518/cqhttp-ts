@@ -60,7 +60,7 @@ import sendGroupNoticeApi from './sendGroupNoticeApi';
 import setEssenceMsgApi from './setEssenceMsgApi';
 import setGroupPortraitApi from './setGroupPortraitApi';
 import setModelShowApi from './setModelShowApi';
-import setQQprofileApi from './setQQprofileApi';
+import setQQProfileApi from './setQQProfileApi';
 import setRestartApi from './setRestartApi';
 import uploadGroupFileApi from './uploadGroupFileApi';
 import uploadPrivateFileApi from './uploadPrivateFileApi';
@@ -128,7 +128,7 @@ export const CqApi = {
 	setGroupSpecialTitleApi,
 	setGroupWholeBanApi,
 	setModelShowApi,
-	setQQprofileApi,
+	setQQProfileApi,
 	setRestartApi,
 	uploadGroupFileApi,
 	uploadPrivateFileApi,

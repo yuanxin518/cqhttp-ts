@@ -7,5 +7,5 @@ export type SetQQProfileType = {
 	company: string;
 	email: string;
 	collega: string;
-	personnal_note: string;
+	personal_note: string;
 };
