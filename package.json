@@ -11,8 +11,7 @@
 	"scripts": {
 		"build": "tsup",
 		"dev": "npm run build && nodemon demo/index.ts",
-		"release": "bumpp --commit  --tag --push",
-		"prepare": "husky-install"
+		"release": "bumpp --commit  --tag --push"
 	},
 	"author": "circkoooooo",
 	"license": "AGPL-3.0",
