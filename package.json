@@ -13,7 +13,7 @@
 		"dev": "npm run build && nodemon demo/index.ts",
 		"release": "bumpp --commit  --tag --push"
 	},
-	"author": "circkoooooo",
+	"author": "yuanxin518",
 	"license": "AGPL-3.0",
 	"keywords": [
 		"go-cqhttp",
@@ -22,7 +22,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Circkoooooo/cqhttp-ts"
+		"url": "https://github.com/yuanxin518/cqhttp-ts"
 	},
 	"dependencies": {
 		"@types/log": "^6.3.0",
