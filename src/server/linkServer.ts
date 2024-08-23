@@ -33,10 +33,22 @@ import { CqApi } from '../api';
 import { GetLoginInfoApiResponseType } from '../types/api';
 
 export let CqWebsocket: WebSocket;
-const initLinkServer = (port: number): Promise<GetLoginInfoApiResponseType> => {
+function initLinkServer(port?: number, ip?:string): Promise<GetLoginInfoApiResponseType>
+function initLinkServer(fullPath?: string): Promise<GetLoginInfoApiResponseType>
+/**
+ * 
+ * @param portOrPath 如果传递数字，则表示port端口号，默认拼接为ws://localhost:{port}。如果传递字符串，则需要传递完整url，如ws://localhost:8080
+ * @param ip [可选]，默认为localhost
+ * @returns 
+ */
+function initLinkServer(portOrPath?: string | number, ip?:string): Promise<GetLoginInfoApiResponseType> {
 	return new Promise((resolve, reject) => {
-		CqWebsocket = new WebSocket('ws://localhost:' + port);
-
+		if (typeof portOrPath === "number") {
+            CqWebsocket = new WebSocket(`ws://${ip || 'localhost'}:${portOrPath}`);
+        } else if (typeof portOrPath === "string") {
+            CqWebsocket = new WebSocket(portOrPath);
+        }
+	
 		CqWebsocket.on('error', (err) => {
 			reject(err);
 		});
