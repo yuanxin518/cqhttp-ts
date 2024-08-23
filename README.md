@@ -23,7 +23,7 @@ useMod.useMessageMod([friendMessageModTest([2389451262]),xxx(),xxx().....]);
 //类似这样来加载更多的mod
 
 ```
-```
+```friendMessageModTest.ts
 import { CqApi,ModTypes,PostTypes} from 'cqhttp-ts';
 
 export default (whiteList: number[] | false): ModTypes.GroupMessageModType => {
