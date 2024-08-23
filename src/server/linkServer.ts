@@ -72,8 +72,10 @@ function initLinkServer(portOrPath?: string | number, ip?:string): Promise<GetLo
 			// 处理消息
 			const data: GeneralPost = JSON.parse(msg.toString());
 			switch (data.post_type) {
-				// 消息上报
+				// 消息上报（他 接收到的）
 				case 'message':
+				// 消息上报（自己 发出去的）
+				case "message_sent":
 					const message: GeneralMessagePost = data as any;
 					// 绑定自动回复函数
 					if (message.message_type === 'private') {
